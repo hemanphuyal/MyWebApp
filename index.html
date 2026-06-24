@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heman Phuyal</title>
+
+    <!-- Google Font: Lato -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Lato',sans-serif;
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:20px;
+            color:#1f2937;
+
+            /* Subtle dotted texture */
+            background:
+                radial-gradient(circle at 1px 1px,#ececec 1px,transparent 0);
+            background-size:24px 24px;
+            background-color:#ffffff;
+        }
+
+        .container{
+            width:100%;
+            max-width:520px;
+            text-align:center;
+            padding:20px;
+        }
+
+        .photo{
+            width:150px;
+            height:150px;
+            border-radius:50%;
+            object-fit:cover;
+            border:4px solid #ffffff;
+            outline:1px solid #d1d5db;
+            margin-bottom:28px;
+        }
+
+        h1{
+            font-size:42px;
+            font-weight:900;
+            letter-spacing:-0.5px;
+            margin-bottom:10px;
+            color:#111827;
+        }
+
+        p{
+            font-size:17px;
+            font-weight:400;
+            color:#6b7280;
+            line-height:1.7;
+            margin-bottom:24px;
+        }
+
+        .email{
+            display:inline-block;
+            text-decoration:none;
+            color:#111827;
+            font-size:17px;
+            font-weight:700;
+            margin-bottom:32px;
+            transition:0.2s ease;
+        }
+
+        .email:hover{
+            opacity:0.7;
+        }
+
+        .social{
+            display:flex;
+            justify-content:center;
+            gap:18px;
+        }
+
+        .social a{
+            width:46px;
+            height:46px;
+            border-radius:50%;
+            border:1px solid #d8d8d8;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:#374151;
+            text-decoration:none;
+            transition:all 0.2s ease;
+        }
+
+        .social a:hover{
+            background:#111827;
+            color:#ffffff;
+            border-color:#111827;
+        }
+
+        @media (max-width:600px){
+
+            h1{
+                font-size:34px;
+            }
+
+            .photo{
+                width:120px;
+                height:120px;
+            }
+
+            p,
+            .email{
+                font-size:15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Replace with your actual image -->
+        <img src="profile.jpg" alt="Heman Phuyal" class="photo">
+
+        <h1>Heman Phuyal</h1>
+
+        <p>
+            Cybersecurity • Cloud Security • Network Security
+        </p>
+
+        <a href="mailto:hello@hemanphuyal.com" class="email">
+            hello@hemanphuyal.com
+        </a>
+
+        <div class="social">
+            <a href="https://x.com/hemanphuyal" target="_blank" aria-label="X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="https://linkedin.com/in/hemantaphuyal" target="_blank" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
