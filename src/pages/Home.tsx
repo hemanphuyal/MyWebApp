@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { ArrowRight, ArrowUpRight, Code2, Cloud, Network, Shield, Terminal, Database, Headset } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Cloud, Network, Shield, Headset } from 'lucide-react'
 import avatar from '../assets/avatar.png'
 
 

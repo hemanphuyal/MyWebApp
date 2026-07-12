@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Menu, X, Sun, Moon, Languages, PersonStanding } from 'lucide-react'
+import { Menu, X, Sun, Moon, PersonStanding } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
 import AccessibilityMenu from './AccessibilityMenu'
 import avatar from '../assets/avatar.png'
