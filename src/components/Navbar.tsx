@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { Menu, X, Sun, Moon, PersonStanding } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
 import AccessibilityMenu from './AccessibilityMenu'
-import avatar from '../assets/avatar.png'
+import avatar from '../assets/avatarnew.png'
 
 const styles: Record<string, React.CSSProperties> = {
   header: {

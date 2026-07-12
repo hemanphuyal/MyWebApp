@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Download } from 'lucide-react'
-import avatar from '../assets/avatar.png'
+import avatar from '../assets/avatarnew.png'
 
 export default function About() {
   const { t } = useTranslation()
