@@ -51,7 +51,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
 }
 
-const NAV_ITEMS = ['home', 'about', 'contact', 'blog', 'tools'] as const
+const NAV_ITEMS = ['home', 'about', 'blog', 'tools', 'contact'] as const
 const PATHS: Record<(typeof NAV_ITEMS)[number], string> = {
   home: '/', about: '/about', contact: '/contact', blog: '/blog', tools: '/tools',
 }
