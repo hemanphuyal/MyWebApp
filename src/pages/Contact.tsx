@@ -140,7 +140,7 @@ export default function Contact() {
                     rel="noreferrer"
                     style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}
                   >
-                    <ExternalLink size={16} /> X
+                    <ExternalLink size={16} /> X (Twitter)
                   </a>
                 </li>
 
