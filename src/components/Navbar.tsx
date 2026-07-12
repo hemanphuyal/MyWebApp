@@ -5,10 +5,6 @@ import { Menu, X, Sun, Moon, PersonStanding } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
 import AccessibilityMenu from './AccessibilityMenu'
 import avatar from '../assets/avatar.png'
-import ukFlagLight from '../assets/UKFLAGWHITE.svg'
-import nepalFlagLight from '../assets/NEPALFLAGWHITE.svg'
-import ukFlagDark from '../assets/UKFLAGDARK.svg'
-import nepalFlagDark from '../assets/NEPALFLAGDARK.svg'
 
 const styles: Record<string, React.CSSProperties> = {
   header: {
@@ -92,37 +88,19 @@ export default function Navbar() {
   const IconButtons = (
     <>
       <button
-        className="btn btn--ghost btn--icon"
+        className="btn btn--ghost"
         onClick={toggleLang}
         aria-label={t('nav.language')}
         title={i18n.language === 'en' ? 'Switch to Nepali' : 'Switch to English'}
         style={{
-          width: 40,
-          height: 40,
-          padding: 0,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          minWidth: 52,
+          height: 36,
+          padding: '0 12px',
+          fontWeight: 600,
+          fontSize: '0.875rem',
         }}
       >
-        <img
-          src={
-            i18n.language === 'en'
-              ? theme === 'dark'
-                ? nepalFlagLight
-                : nepalFlagDark
-              : theme === 'dark'
-                ? ukFlagLight
-                : ukFlagDark
-          }
-          alt={i18n.language === 'en' ? 'Nepali' : 'English'}
-          style={{
-            width: 22,
-            height: 22,
-            objectFit: 'contain',
-            display: 'block',
-          }}
-        />
+        {i18n.language === 'en' ? 'ने' : 'EN'}
       </button>
       <button className="btn btn--ghost btn--icon" onClick={toggle} aria-label={t('nav.theme')} title={theme === 'dark' ? t('theme.light') : t('theme.dark')}>
         {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
