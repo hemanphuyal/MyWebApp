@@ -18,7 +18,7 @@ const en = {
     name: 'Heman Phuyal',
     role: 'Cybersecurity · Network · Cloud',
     skipToContent: 'Skip to content',
-    builtWith: 'Crafted with care in Kathmandu.',
+    allRightsReserved: "All rights reserved."
   },
   home: {
     intro:

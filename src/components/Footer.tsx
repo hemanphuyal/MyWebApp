@@ -75,10 +75,39 @@ export default function Footer() {
 
         <hr className="divider" style={{ margin: '32px 0 20px' }} />
 
-        <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
-          <span className="small muted">© {year} {t('common.name')}</span>
-          <span className="small muted">{t('common.builtWith')}</span>
-        </div>
+        <div
+  style={{
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    gap: 12,
+  }}
+>
+  <span className="small muted">
+    © {year} {t('common.name')}.  {t('common.allRightsReserved')}
+  </span>
+
+  <div
+    style={{
+      display: 'flex',
+      gap: 16,
+      flexWrap: 'wrap',
+    }}
+  >
+    <Link to="#" className="small muted">
+      Privacy Policy
+    </Link>
+
+    <Link to="#" className="small muted">
+      Terms of Service
+    </Link>
+
+    <Link to="#" className="small muted">
+      Cookie Policy
+    </Link>
+  </div>
+</div>
       </div>
     </footer>
   )

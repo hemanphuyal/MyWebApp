@@ -20,7 +20,7 @@ const ne: Dict = {
     name: 'हेमन फुयाल',
     role: 'साइबर सुरक्षा · नेटवर्क · क्लाउड',
     skipToContent: 'मुख्य सामग्रीमा जानुहोस्',
-    builtWith: 'काठमाडौँमा मायाका साथ बनाइएको।',
+    allRightsReserved: "सबै अधिकार सुरक्षित।"
   },
   home: {
     intro:
