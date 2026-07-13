@@ -80,7 +80,28 @@ const en = {
     },
   },
   blog: { title: 'Blog', sub: 'Coming soon.' },
-  tools: { title: 'Tools', sub: 'Coming soon.' },
+  tools: {
+    title: 'Tools',
+    sub: 'Coming soon.',
+    lede: 'A small collection of utilities I use and share.',
+    items: {
+      calendar: {
+        title: 'Nepali Calendar',
+        desc: 'Bikram Sambat calendar with AD alignment, holidays highlighted.',
+      },
+    },
+  },
+  calendar: {
+    title: 'Nepali Calendar',
+    sub: 'Bikram Sambat (BS) with Gregorian (AD) alignment. Weekly holidays highlighted in red.',
+    today: 'Today',
+    jumpToday: 'Jump to today',
+    prev: 'Previous month',
+    next: 'Next month',
+    holiday: 'Public holiday',
+    legendSat: 'Saturday: weekly holiday',
+    legendSun: 'Sunday: holiday from 2082 Chaitra 29 onwards',
+  },
   notFound: { title: '404', sub: 'This page could not be found.', back: 'Back to home' },
   a11y: {
     title: 'Accessibility',

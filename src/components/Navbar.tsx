@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { Menu, X, Sun, Moon, PersonStanding } from 'lucide-react'
 import { useTheme } from '../contexts/ThemeContext'
 import AccessibilityMenu from './AccessibilityMenu'
+import TodayDate from './TodayDate'
 import avatar from '../assets/avatarnew.png'
 
 const styles: Record<string, React.CSSProperties> = {
@@ -115,15 +116,20 @@ export default function Navbar() {
     <>
       <header style={styles.header}>
         <div className="container" style={styles.bar}>
+          {/* Brand on far left */}
           <NavLink to="/" style={styles.brand} aria-label={t('common.name')}>
             <img src={avatar} alt="" style={styles.brandAvatar} />
             <span>HP.</span>
           </NavLink>
 
+          {/* Right cluster: nav | icons | today */}
           {!mobile && (
-            <div style={styles.nav}>
-              {links}
-              <div style={styles.actions}>{IconButtons}</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+              <div style={styles.nav}>{links}</div>
+              <div style={{ width: 1, height: 24, background: 'var(--border)' }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>{IconButtons}</div>
+              <div style={{ width: 1, height: 24, background: 'var(--border)' }} />
+              <TodayDate />
             </div>
           )}
 
@@ -139,8 +145,10 @@ export default function Navbar() {
 
         {mobile && open && (
           <div style={{ borderTop: '1px solid var(--border)' }}>
-            <div className="container" style={{ padding: '16px 24px 24px', display: 'flex', flexDirection: 'column', gap: 4 }}>
-              {links}
+            <div className="container" style={{ padding: '16px 24px 24px', display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>{links}</div>
+              <div style={{ height: 1, background: 'var(--border)' }} />
+              <TodayDate layout="stacked" onNavigate={() => setOpen(false)} />
             </div>
           </div>
         )}
