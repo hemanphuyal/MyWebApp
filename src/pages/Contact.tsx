@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Mail, MapPin, ExternalLink, Send, User, AtSign, MessageSquare, Type } from 'lucide-react'
+import { useSearchParams } from 'react-router-dom'
+import { Mail, MapPin, ExternalLink, Send, User, AtSign, MessageSquare, Type, Phone } from 'lucide-react'
 
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwLRklbPasarYp-y5aEe05dQZovea0m1X9pqf3u2-orSNoJtHcFQEJqgFzgd05qb5pUwg/exec'
 
@@ -8,7 +9,9 @@ type Status = 'idle' | 'sending' | 'success' | 'error'
 
 export default function Contact() {
   const { t } = useTranslation()
-  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
+  const [searchParams] = useSearchParams()
+  const initialSubject = searchParams.get('subject') || ''
+  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: initialSubject, message: '' })
   const [status, setStatus] = useState<Status>('idle')
   const [errorMsg, setErrorMsg] = useState('')
 
@@ -28,6 +31,7 @@ export default function Contact() {
     e.preventDefault()
     const name = form.name.trim()
     const email = form.email.trim()
+    const phone = form.phone.trim()
     const subject = form.subject.trim() || 'Website Enquiry'
     const message = form.message.trim()
 
@@ -40,14 +44,15 @@ export default function Contact() {
       const body = new URLSearchParams()
       body.append('name', name)
       body.append('email', email)
+      if (phone) body.append('phone', phone)
       // Map subject into the "service" field the Apps Script expects
       body.append('service', subject)
-      body.append('message', message)
+      body.append('message', phone ? `${message}\n\nPhone: ${phone}` : message)
       const response = await fetch(SCRIPT_URL, { method: 'POST', body })
       const result = await response.json().catch(() => ({ status: 'success' }))
       if (result.status === 'success') {
         setStatus('success')
-        setForm({ name: '', email: '', subject: '', message: '' })
+        setForm({ name: '', email: '', phone: '', subject: '', message: '' })
       } else {
         setStatus('error')
         setErrorMsg(result.message || t('contact.errors.message'))
@@ -72,6 +77,9 @@ export default function Contact() {
             </Field>
             <Field icon={<AtSign size={16} />} id="c-email" label={t('contact.email')}>
               <input id="c-email" type="email" className="input" autoComplete="email" value={form.email} onChange={update('email')} maxLength={255} />
+            </Field>
+            <Field icon={<Phone size={16} />} id="c-phone" label={t('contact.phone')}>
+              <input id="c-phone" type="tel" className="input" autoComplete="tel" value={form.phone} onChange={update('phone')} maxLength={30} placeholder={t('contact.phonePlaceholder')} />
             </Field>
             <Field icon={<Type size={16} />} id="c-subject" label={t('contact.subject')}>
               <input id="c-subject" className="input" value={form.subject} onChange={update('subject')} maxLength={150} placeholder="Website Enquiry" />
@@ -152,6 +160,16 @@ export default function Contact() {
                     style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}
                   >
                     <ExternalLink size={16} /> GitHub
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://t.me/hemanphuyal"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}
+                  >
+                    <ExternalLink size={16} /> Telegram
                   </a>
                 </li>
               </ul>
