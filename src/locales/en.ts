@@ -118,6 +118,12 @@ const en = {
         title: 'Nepali Calendar',
         desc: 'Bikram Sambat calendar with AD alignment, holidays highlighted.',
       },
+      dateConverter: { title: 'Date Converter', desc: 'Convert dates between AD (English) and BS (Nepali).' },
+      age: { title: 'Age Calculator', desc: 'Calculate exact age from an AD or BS birth date.' },
+      percentage: { title: 'Percentage Calculator', desc: 'Percent of, percent change, add and subtract percentages.' },
+      unitConverter: { title: 'Unit Converter', desc: 'Length, weight, temperature, volume, area, speed, time and data.' },
+      subnet: { title: 'Subnet Calculator', desc: 'IPv4 and IPv6 subnetting with CIDR notation.' },
+      binary: { title: 'Base Converter', desc: 'Convert between binary, decimal, hex and octal.' },
     },
   },
   calendar: {

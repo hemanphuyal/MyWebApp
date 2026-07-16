@@ -10,6 +10,12 @@ import Blog from './pages/Blog'
 import Services from './pages/Services'
 import Tools from './pages/Tools'
 import CalendarPage from './pages/CalendarPage'
+import PercentageCalc from './pages/tools/PercentageCalc'
+import UnitConverter from './pages/tools/UnitConverter'
+import SubnetCalculator from './pages/tools/SubnetCalculator'
+import BinaryConverter from './pages/tools/BinaryConverter'
+import AgeCalculator from './pages/tools/AgeCalculator'
+import DateConverter from './pages/tools/DateConverter'
 import NotFound from './pages/NotFound'
 
 export default function App() {
@@ -31,6 +37,12 @@ export default function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/tools" element={<Tools />} />
           <Route path="/calendar" element={<CalendarPage />} />
+          <Route path="/tools/percentage" element={<PercentageCalc />} />
+          <Route path="/tools/unit-converter" element={<UnitConverter />} />
+          <Route path="/tools/subnet" element={<SubnetCalculator />} />
+          <Route path="/tools/binary" element={<BinaryConverter />} />
+          <Route path="/tools/age" element={<AgeCalculator />} />
+          <Route path="/tools/date-converter" element={<DateConverter />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
